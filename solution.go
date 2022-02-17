@@ -12,13 +12,17 @@ import "math"
 
 type sides int
 
+const SidesCircle = 0
+const SidesTriangle = 3
+const SidesSquare = 4
+
 func CalcSquare(sideLen float64, sidesNum sides) float64 {
 	switch sidesNum {
-	case 0:
+	case SidesCircle:
 		return sideLen * sideLen * math.Pi
-	case 3:
+	case SidesTriangle:
 		return (math.Sqrt(3) * math.Pow(sideLen, 2)) / 4
-	case 4:
+	case SidesSquare:
 		return sideLen * sideLen
 	}
 
